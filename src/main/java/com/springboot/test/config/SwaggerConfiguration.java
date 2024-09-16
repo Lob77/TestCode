@@ -9,25 +9,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SwaggerConfiguration {
-//http://localhost:8080/swagger-ui/index.html
-    @Bean
-    public GroupedOpenApi api(){
-        return GroupedOpenApi.builder()
-                .group("product")
-                .packagesToScan("com.springboot.test.controller.ProductController")
-                .pathsToMatch("/product/**")
-                .build();
-    }
-
-    @Bean
-    public OpenAPI openAPI(){
-        return new OpenAPI()
-                .info(new Info()
-                        .title("Spring Boot Open API Test with Swagger")
-                        .description("설명 부분")
-                        .version("1.0.0")
-                );
-    }
 
 //    @Bean
 //    public OpenAPI openAPI(){
@@ -42,4 +23,24 @@ public class SwaggerConfiguration {
 //                .description("swagger 테스트")
 //                .version("1.0.0");
 //    }
+
+//    @Bean
+//    public GroupedOpenApi api(){
+//        return GroupedOpenApi.builder()
+//                .group("product")
+//                .packagesToScan("com.springboot.test.controller.ProductController")
+//                .pathsToMatch("/product/**")
+//                .build();
+//    }
+
+
+    @Bean
+    public OpenAPI openAPI(){
+        return new OpenAPI()
+                .info(new Info()
+                        .title("Spring Boot Open API Test with Swagger")
+                        .description("설명 부분")
+                        .version("1.0.0")
+                );
+    }
 }
